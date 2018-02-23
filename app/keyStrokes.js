@@ -1,21 +1,25 @@
-const keyStrokes = {
-	addEventListeners: function() {
-		window.addEventListeners('keypress', (event) => {
-			const char = event.eyeCode;
-			console.log(char);
-			console.log('fgdfg');
+const mediator = require('mediator.js');
 
+const keyStrokes = {
+	addEventListeners: () => {
+		window.addEventListener('keypress', (event) => {
+			const char = event.keyCode;
 			
-			/*
 			switch(char) {
-				cas
+				case 32: // Space key
+					mediator.publish('togglePause', {});
+					break;
 			};
-			*/
+			
 
 		});
+	}, 
+
+	init: () => {
+		keyStrokes.addEventListeners();
 	}
 };
 
 module.exports = {
-	addEventListeners: keyStrokes.addEventListeners
+	init: keyStrokes.init
 }

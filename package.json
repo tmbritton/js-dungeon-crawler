@@ -17,15 +17,14 @@
   },
   "homepage": "https://github.com/tmbritton/js-dungeon-crawler#readme",
   "devDependencies": {
-    "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
     "gulp-plumber": "^1.2.0",
     "gulp-run-sequence": "^0.3.2",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-util": "^3.0.8",
-    "gulp-webserver": "^0.9.1",
-    "path": "^0.12.7",
-    "vinyl-source-stream": "^2.0.0"
+    "gulp-webserver": "^0.9.1"
+  },
+  "dependencies": {
+    "mediator.js": "^1.0.1"
   }
 }

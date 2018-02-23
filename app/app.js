@@ -1,4 +1,6 @@
 var keyStrokes = require('./keyStrokes');
+var counters = require('./counters');
+var mediator = require('mediator.js');
 
 document.addEventListener('DOMContentLoaded',function(){
 
@@ -12,26 +14,33 @@ document.addEventListener('DOMContentLoaded',function(){
 		countSeconds: function() {
 			window.setInterval(() => {
 				if (!stateMachine.state.isPaused) {
-					stateMachine.setSeconds(stateMachine.state.second + 1);
+					stateMachine.state.second = stateMachine.state.second + 1;
 				}
 			}, 1000);
 		},
 
 		init: function() {
+			keyStrokes.init();
+			counters.init();
+			stateMachine.addSubscriptions();
 			stateMachine.countSeconds();
 			stateMachine.update();
 		},
 
-		setSeconds: function(num) {
-			stateMachine.state.second = num;
+		addSubscriptions: function() {
+			mediator.subscribe('togglePause', () => {
+				if (stateMachine.state.isPaused) {
+					stateMachine.state.isPaused = false;
+				}
+				else {
+					stateMachine.state.isPaused = true;
+				}
+			})
 		},
 
 		update: function() {
-			var secondElement = document.getElementById('second-counter');
-			var frameElement = document.getElementById('frame-counter');
 			stateMachine.state.frame = stateMachine.state.frame + 1;
-			secondElement.innerHTML = ('Seconds: ' + stateMachine.state.second);
-			frameElement.innerHTML = ('Frames: ' + stateMachine.state.frame);
+			mediator.publish('update', stateMachine.state);
 			window.requestAnimationFrame(stateMachine.update);
 		}
 	}
