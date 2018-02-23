@@ -1,8 +1,11 @@
 const keyStrokes = {
 	addEventListeners: function() {
-		window.addEventListeners('keypress', function(event) => {
+		window.addEventListeners('keypress', (event) => {
 			const char = event.eyeCode;
 			console.log(char);
+			console.log('fgdfg');
+
+			
 			/*
 			switch(char) {
 				cas
@@ -13,6 +16,6 @@ const keyStrokes = {
 	}
 };
 
-export {
+module.exports = {
 	addEventListeners: keyStrokes.addEventListeners
 }

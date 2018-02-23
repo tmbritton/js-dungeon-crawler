@@ -1,4 +1,4 @@
-//import * as keyStrokes from 'keyStrokes';
+var keyStrokes = require('./keyStrokes');
 
 document.addEventListener('DOMContentLoaded',function(){
 

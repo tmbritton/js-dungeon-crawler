@@ -1,0 +1,31 @@
+{
+  "name": "js-dungeon-crawler",
+  "version": "0.0.0",
+  "description": "Javascript dungeon crawler/game engine.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmbritton/js-dungeon-crawler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmbritton/js-dungeon-crawler/issues"
+  },
+  "homepage": "https://github.com/tmbritton/js-dungeon-crawler#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-plumber": "^1.2.0",
+    "gulp-run-sequence": "^0.3.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-util": "^3.0.8",
+    "gulp-webserver": "^0.9.1",
+    "path": "^0.12.7",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}
